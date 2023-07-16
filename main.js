@@ -1,4 +1,4 @@
-//PROYECTO MIS LIBROS CON DOM
+
 //class constructora
 class Pelicula{
     constructor(id, director, titulo, precio, imagen){
@@ -24,10 +24,25 @@ class Pelicula{
  
  const pelicula6 = new Pelicula(6,"Fabián Bielinsky", "9 reinas", 1000, "reinas.jpg")
  
+ const pelicula7 = new Pelicula(7,"Lucas Santa Ana","Yo Adolescente",1000,"adolescente.jpg")
+
+ const pelicula8 = new Pelicula(8,"Santiago Mitre","Argentina 1985",1000,"argentina.jpg")
+
+ const pelicula9 = new Pelicula(9,"Juan José Campanella","Metegol",1000,"metegol.jpg")
+
+ const pelicula10 = new Pelicula(10," Sebastián Schindel","El patrón, radiografía de un crimen",1000,"patron.jpg")
+
+ const pelicula11 = new Pelicula(11,"Juan Pablo Buscarini","El ratón Pérez",1000,"raton.jpg")
+
+ const pelicula12 = new Pelicula(12,"Ariel Winograd","El robo del siglo",1000,"robo.jpg")
+
+
+
+
  //CREAR UN ARRAY DE OBJETOS
  const cartelera = []
- cartelera.push(pelicula1, pelicula2, pelicula3, pelicula4, pelicula5, pelicula6)
-
+ cartelera.push(pelicula1, pelicula2, pelicula3, pelicula4, pelicula5, pelicula6, pelicula7, pelicula8, pelicula9, pelicula10,
+   pelicula11, pelicula12)
 
 
  //DOM CON ARRAY DE OBJETOS
@@ -44,10 +59,10 @@ class Pelicula{
        //agregar class
        nuevaPeliculaDiv.className = "col-12 col-md-6 col-lg-4 my-2"
        nuevaPeliculaDiv.innerHTML = `<div id="${pelicula.id}" class="card" style="width: 18rem;">
-                                  <img class="card-img-top img-fluid" style="height: 200px;"src="assets/${pelicula.imagen}" alt="${pelicula.titulo} de ${pelicula.director}">
+                                  <img class="card-img-top img-fluid" style="height: 200px; "src="assets/${pelicula.imagen}" alt="${pelicula.titulo} de ${pelicula.director}">
                                   <div class="card-body">
                                      <h4 class="card-title">${pelicula.titulo}</h4>
-                                     <p>Autor: ${pelicula.director}</p>
+                                     <p> Director: ${pelicula.director}</p>
                                      <p class="">Precio: ${pelicula.precio}</p>
                                   <button id="agregarBtn${pelicula.id}" class="btn btn-outline-success">Agregar al carrito</button>
                                   </div>
@@ -62,21 +77,22 @@ class Pelicula{
        })
     }
  
- }
+   }
+   mostrarCartelera(cartelera)
  
  
  //capturo ID del boton
- let verCartelera = document.getElementById("verCartelera")
- //pasar evento:
- verCartelera.addEventListener("click", ()=>{
-    mostrarCartelera(cartelera)
- })
+//  let verCartelera = document.getElementById("verCartelera")
+//  //pasar evento:
+//  verCartelera.addEventListener("click", ()=>{
+//     mostrarCartelera(cartelera)
+//  })
  
- let ocultarCartelera = document.getElementById("ocultarCartelera")
- ocultarCartelera.ondblclick = () => {
-    //reiniciando el div
-    librosDiv.innerHTML = ``
- }
+//  let ocultarCartelera = document.getElementById("ocultarCartelera")
+//  ocultarCartelera.ondblclick = () => {
+//     //reiniciando el div
+//     librosDiv.innerHTML = ``
+//  }
  
  //ordenar array por criterio
  let selectOrden = document.getElementById("selectOrden")
@@ -146,7 +162,7 @@ class Pelicula{
     console.log(formAgregarPelicula[1])
     console.log(formAgregarPelicula[2])
    
-    const peliNueva = new Pelicula(array.length+1,formAgregarPelicula[1].value, formAgregarPelicula[0].value, parseInt(formAgregarPelicula[2].value), "angel.jpg")
+    const peliNueva = new Pelicula(array.length+1,formAgregarPelicula[1].value, formAgregarPelicula[0].value, parseInt(formAgregarPelicula[2].value), "cine.jpg")
     console.log(peliNueva)
  
     array.push(peliNueva)
